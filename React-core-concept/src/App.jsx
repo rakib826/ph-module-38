@@ -1,14 +1,26 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Actor from './Actor'
+import Singer from './Singer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const actors = ["Jon Snow", "Denerys","Ned Stark", "Drogon", "Silver Wing"]
+  const singers = [
+    {name: "mahfuz", age: 62},
+    {name: "Endo Kishore", age: 76},
+    {name: "Eva rahman", age: 23},
+    {name: "Pritom", age: 37}
+  ]
   return (
     <>
       <h1>Vite+React</h1>
+      {
+        singers.map(singer=><Singer singer={singer}></Singer>)
+      }
+      <Actor name="Bapparaj"></Actor>
+      {
+        actors.map(actor=><Actor name={actor}></Actor>)
+      }
       <Device name="laptop" price="55"></Device>
       <Device name="mobile" price="45"></Device>
       <Device name="watch" price="25"></Device>
